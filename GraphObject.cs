@@ -7,6 +7,7 @@ namespace Lab2_Sem3_Galin_Mihail
     {
         private Color c;
         private int x, y, w, h;
+
         private SolidBrush brush;
         private static Random r = new Random();
 
