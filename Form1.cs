@@ -36,5 +36,17 @@ namespace Lab2_Sem3_Galin_Mihail
         private void ClearFigures(object sender, EventArgs e)
         {
         }
+
+        private void Panel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+            GraphObject figure = new GraphObject
+            {
+                X = e.X,
+                Y = e.Y
+            };
+            elements.Add(figure);
+            Refresh();
+        }
     }
 }

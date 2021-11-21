@@ -37,11 +37,11 @@ namespace Lab2_Sem3_Galin_Mihail
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.Panel = new System.Windows.Forms.Panel();
             this.ExitButtonWithImage = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.AddButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.Panel = new System.Windows.Forms.Panel();
             this.MenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -118,20 +118,6 @@ namespace Lab2_Sem3_Galin_Mihail
             this.ToolStrip.TabIndex = 3;
             this.ToolStrip.Text = "toolStrip1";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 54);
-            // 
-            // Panel
-            // 
-            this.Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Panel.Location = new System.Drawing.Point(77, 77);
-            this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(632, 326);
-            this.Panel.TabIndex = 4;
-            this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintPanel);
-            // 
             // ExitButtonWithImage
             // 
             this.ExitButtonWithImage.Image = global::Lab2_Sem3_Galin_Mihail.Properties.Resources.icons8_выключение_системы_48;
@@ -141,6 +127,11 @@ namespace Lab2_Sem3_Galin_Mihail
             this.ExitButtonWithImage.Text = "Выход";
             this.ExitButtonWithImage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ExitButtonWithImage.Click += new System.EventHandler(this.Exit);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 54);
             // 
             // AddButton
             // 
@@ -161,6 +152,16 @@ namespace Lab2_Sem3_Galin_Mihail
             this.toolStripButton1.Text = "Очистить";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.ClearFigures);
+            // 
+            // Panel
+            // 
+            this.Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Panel.Location = new System.Drawing.Point(77, 77);
+            this.Panel.Name = "Panel";
+            this.Panel.Size = new System.Drawing.Size(632, 326);
+            this.Panel.TabIndex = 4;
+            this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintPanel);
+            this.Panel.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDoubleClick);
             // 
             // Form1
             // 
