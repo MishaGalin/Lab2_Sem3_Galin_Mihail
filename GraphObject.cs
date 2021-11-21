@@ -3,19 +3,27 @@ using System.Drawing;
 
 namespace Lab2_Sem3_Galin_Mihail
 {
-    public class GraphObject
+    public abstract class GraphObject
     {
-        private static Random r = new Random();
-        private SolidBrush brush;
-        private int x, y, w, h;
+        private static readonly Random r = new Random();
+        protected SolidBrush brush;
+        protected int x, y;
 
         public GraphObject()
         {
             Color[] colors = { Color.Red, Color.Green, Color.Yellow, Color.Tomato, Color.Cyan };
+            Selected = false;
             X = r.Next(550);
             Y = r.Next(250);
-            w = 50;
-            h = 50;
+            brush = new SolidBrush(colors[r.Next(colors.Length)]);
+        }
+
+        public GraphObject(int x, int y)
+        {
+            Color[] colors = { Color.Red, Color.Green, Color.Yellow, Color.Tomato, Color.Cyan };
+            Selected = false;
+            X = x;
+            Y = y;
             brush = new SolidBrush(colors[r.Next(colors.Length)]);
         }
 
@@ -41,15 +49,8 @@ namespace Lab2_Sem3_Galin_Mihail
             }
         }
 
-        public void Draw(Graphics g)
-        {
-            g.FillRectangle(brush, X, Y, w, h);
-            g.DrawRectangle(Selected ? Pens.Blue : Pens.Black, X, Y, w, h);
-        }
+        public abstract bool ContainsPoint(Point p);
 
-        public bool ContainsPoint(Point p)
-        {
-            return (p.X <= x + w) & (p.X >= x) & (p.Y >= y) & (p.Y <= y + h);
-        }
+        public abstract void Draw(Graphics g);
     }
 }

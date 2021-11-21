@@ -6,7 +6,8 @@ namespace Lab2_Sem3_Galin_Mihail
 {
     public partial class Form1 : Form
     {
-        private List<GraphObject> elements = new List<GraphObject>();
+        private readonly List<GraphObject> elements = new List<GraphObject>();
+        private readonly Random rand = new Random();
 
         public Form1()
         {
@@ -25,7 +26,8 @@ namespace Lab2_Sem3_Galin_Mihail
 
         private void AddFigure(object sender, EventArgs e)
         {
-            elements.Add(new GraphObject());
+            if (rand.Next(2) == 1) elements.Add(new Ellipse());
+            else elements.Add(new Rectangle());
             Refresh();
         }
 
@@ -35,12 +37,20 @@ namespace Lab2_Sem3_Galin_Mihail
 
         private void Panel_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            GraphObject figure = new GraphObject
+            if (rand.Next(2) == 1)
             {
-                X = e.X,
-                Y = e.Y
-            };
-            elements.Add(figure);
+                Ellipse ellipse = new Ellipse(e.X, e.Y);
+                ellipse.X = (int)(ellipse.X - ellipse.A / 2);
+                ellipse.Y = (int)(ellipse.Y - ellipse.B / 2);
+                elements.Add(ellipse);
+            }
+            else
+            {
+                Rectangle rectangle = new Rectangle(e.X, e.Y);
+                rectangle.X -= rectangle.W / 2;
+                rectangle.Y -= rectangle.H / 2;
+                elements.Add(rectangle);
+            }
             Refresh();
         }
 
