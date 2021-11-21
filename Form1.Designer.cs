@@ -162,6 +162,7 @@ namespace Lab2_Sem3_Galin_Mihail
             this.Panel.TabIndex = 4;
             this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintPanel);
             this.Panel.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDoubleClick);
+            this.Panel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
             // 
             // Form1
             // 

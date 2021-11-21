@@ -7,19 +7,19 @@ namespace Lab2_Sem3_Galin_Mihail
     {
         private static Random r = new Random();
         private SolidBrush brush;
-        private Color c;
         private int x, y, w, h;
 
         public GraphObject()
         {
-            Color[] cols = { Color.Red, Color.Green, Color.Yellow, Color.Tomato, Color.Cyan };
-            c = cols[r.Next(cols.Length)];
+            Color[] colors = { Color.Red, Color.Green, Color.Yellow, Color.Tomato, Color.Cyan };
             X = r.Next(550);
             Y = r.Next(250);
             w = 50;
             h = 50;
-            brush = new SolidBrush(c);
+            brush = new SolidBrush(colors[r.Next(colors.Length)]);
         }
+
+        public bool Selected { get; set; }
 
         public int X
         {
@@ -43,8 +43,13 @@ namespace Lab2_Sem3_Galin_Mihail
 
         public void Draw(Graphics g)
         {
-            g.FillRectangle(Brushes.Red, X, Y, w, h);
-            g.DrawRectangle(Pens.Green, X, Y, w, h);
+            g.FillRectangle(brush, X, Y, w, h);
+            g.DrawRectangle(Selected ? Pens.Blue : Pens.Black, X, Y, w, h);
+        }
+
+        public bool ContainsPoint(Point p)
+        {
+            return (p.X <= x + w) & (p.X >= x) & (p.Y >= y) & (p.Y <= y + h);
         }
     }
 }

@@ -20,17 +20,13 @@ namespace Lab2_Sem3_Galin_Mihail
 
         private void PaintPanel(object sender, PaintEventArgs e)
         {
-            foreach (GraphObject elem in elements)
-            {
-                elem.Draw(e.Graphics);
-            }
+            foreach (GraphObject elem in elements) { elem.Draw(e.Graphics); }
         }
 
         private void AddFigure(object sender, EventArgs e)
         {
-            GraphObject figure = new GraphObject();
-            elements.Add(figure);
-            Panel.Invalidate();
+            elements.Add(new GraphObject());
+            Refresh();
         }
 
         private void ClearFigures(object sender, EventArgs e)
@@ -39,13 +35,25 @@ namespace Lab2_Sem3_Galin_Mihail
 
         private void Panel_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
             GraphObject figure = new GraphObject
             {
                 X = e.X,
                 Y = e.Y
             };
             elements.Add(figure);
+            Refresh();
+        }
+
+        private void Panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            for (int i = 0; i < elements.Count; i++)
+            {
+                elements[i].Selected = false;
+                if (elements[i].ContainsPoint(e.Location))
+                {
+                    elements[i].Selected = true;
+                }
+            }
             Refresh();
         }
     }
