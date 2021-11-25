@@ -14,7 +14,7 @@ namespace Lab2_Sem3_Galin_Mihail
             Color[] colors = { Color.Red, Color.Green, Color.Yellow, Color.Tomato, Color.Cyan };
             Selected = false;
             X = r.Next(700);
-            Y = r.Next(250);
+            Y = r.Next(500);
             brush = new SolidBrush(colors[r.Next(colors.Length)]);
         }
 

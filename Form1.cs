@@ -9,16 +9,14 @@ namespace Lab2_Sem3_Galin_Mihail
         private int SelectedNumber = -1;
         private readonly List<GraphObject> elements = new List<GraphObject>();
         private readonly Random rand = new Random();
+        private IGraphicFactory factory = new RandomObjectFactory();
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Exit(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void Exit(object sender, EventArgs e) => Close();
 
         private void PaintPanel(object sender, PaintEventArgs e)
         {
@@ -27,8 +25,7 @@ namespace Lab2_Sem3_Galin_Mihail
 
         private void AddFigure(object sender, EventArgs e)
         {
-            if (rand.Next(2) == 1) elements.Add(new Ellipse());
-            else elements.Add(new Rectangle());
+            elements.Add(factory.CreateGraphObject());
             Refresh();
         }
 
@@ -64,6 +61,11 @@ namespace Lab2_Sem3_Galin_Mihail
             LeftToolStripButton.Enabled = false;
             RightToolStripButton.Enabled = false;
             DeleteToolStripButton.Enabled = false;
+            UpToolStripMenuItem.Enabled = false;
+            DownToolStripMenuItem.Enabled = false;
+            LeftToolStripMenuItem.Enabled = false;
+            RightToolStripMenuItem.Enabled = false;
+            DeleteToolStripMenuItem.Enabled = false;
 
             SelectedNumber = -1;
 
@@ -77,6 +79,11 @@ namespace Lab2_Sem3_Galin_Mihail
                     LeftToolStripButton.Enabled = true;
                     RightToolStripButton.Enabled = true;
                     DeleteToolStripButton.Enabled = true;
+                    UpToolStripMenuItem.Enabled = true;
+                    DownToolStripMenuItem.Enabled = true;
+                    LeftToolStripMenuItem.Enabled = true;
+                    RightToolStripMenuItem.Enabled = true;
+                    DeleteToolStripMenuItem.Enabled = true;
 
                     SelectedNumber = i;
                     elements[i].Selected = true;
@@ -120,6 +127,12 @@ namespace Lab2_Sem3_Galin_Mihail
             DeleteToolStripButton.Enabled = false;
 
             Refresh();
+        }
+
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (toolStripComboBox1.Text == "Случайные фигуры") factory = new RandomObjectFactory();
+            else factory = new TwoTypeFactory();
         }
     }
 }
