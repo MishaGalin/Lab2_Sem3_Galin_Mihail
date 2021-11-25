@@ -13,7 +13,7 @@ namespace Lab2_Sem3_Galin_Mihail
         {
             Color[] colors = { Color.Red, Color.Green, Color.Yellow, Color.Tomato, Color.Cyan };
             Selected = false;
-            X = r.Next(550);
+            X = r.Next(700);
             Y = r.Next(250);
             brush = new SolidBrush(colors[r.Next(colors.Length)]);
         }
@@ -28,26 +28,8 @@ namespace Lab2_Sem3_Galin_Mihail
         }
 
         public bool Selected { get; set; }
-
-        public int X
-        {
-            get => x;
-            set
-            {
-                if (value < 0) throw new ArgumentException("x<0!");
-                x = value;
-            }
-        }
-
-        public int Y
-        {
-            get => y;
-            set
-            {
-                if (value < 0) throw new ArgumentException("y<0!");
-                y = value;
-            }
-        }
+        public int X { get => x; set => x = value; }
+        public int Y { get => y; set => y = value; }
 
         public abstract bool ContainsPoint(Point p);
 

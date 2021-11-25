@@ -6,6 +6,7 @@ namespace Lab2_Sem3_Galin_Mihail
 {
     public partial class Form1 : Form
     {
+        private int SelectedNumber = -1;
         private readonly List<GraphObject> elements = new List<GraphObject>();
         private readonly Random rand = new Random();
 
@@ -33,6 +34,8 @@ namespace Lab2_Sem3_Galin_Mihail
 
         private void ClearFigures(object sender, EventArgs e)
         {
+            elements.Clear();
+            Refresh();
         }
 
         private void Panel_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -56,14 +59,66 @@ namespace Lab2_Sem3_Galin_Mihail
 
         private void Panel_MouseDown(object sender, MouseEventArgs e)
         {
+            UpToolStripButton.Enabled = false;
+            DownToolStripButton.Enabled = false;
+            LeftToolStripButton.Enabled = false;
+            RightToolStripButton.Enabled = false;
+            DeleteToolStripButton.Enabled = false;
+
+            SelectedNumber = -1;
+
             for (int i = 0; i < elements.Count; i++)
             {
                 elements[i].Selected = false;
                 if (elements[i].ContainsPoint(e.Location))
                 {
+                    UpToolStripButton.Enabled = true;
+                    DownToolStripButton.Enabled = true;
+                    LeftToolStripButton.Enabled = true;
+                    RightToolStripButton.Enabled = true;
+                    DeleteToolStripButton.Enabled = true;
+
+                    SelectedNumber = i;
                     elements[i].Selected = true;
                 }
             }
+            Refresh();
+        }
+
+        private void UpToolStripButton_Click(object sender, EventArgs e)
+        {
+            elements[SelectedNumber].Y -= 5;
+            Refresh();
+        }
+
+        private void DownToolStripButton_Click(object sender, EventArgs e)
+        {
+            elements[SelectedNumber].Y += 5;
+            Refresh();
+        }
+
+        private void LeftToolStripButton_Click(object sender, EventArgs e)
+        {
+            elements[SelectedNumber].X -= 5;
+            Refresh();
+        }
+
+        private void RightToolStripButton_Click(object sender, EventArgs e)
+        {
+            elements[SelectedNumber].X += 5;
+            Refresh();
+        }
+
+        private void DeleteToolStripButton_Click(object sender, EventArgs e)
+        {
+            elements.Remove(elements[SelectedNumber]);
+            SelectedNumber = -1;
+            UpToolStripButton.Enabled = false;
+            DownToolStripButton.Enabled = false;
+            LeftToolStripButton.Enabled = false;
+            RightToolStripButton.Enabled = false;
+            DeleteToolStripButton.Enabled = false;
+
             Refresh();
         }
     }

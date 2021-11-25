@@ -73,6 +73,46 @@ namespace Lab2_Sem3_Galin_Mihail.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_down_15736 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_down_15736", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_up_15736 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_up_15736", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_up_157361 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_up_157361", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back_icon_icons_com_74430 {
+            get {
+                object obj = ResourceManager.GetObject("back_icon-icons.com_74430", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel__red_4712 {
             get {
                 object obj = ResourceManager.GetObject("cancel__red_4712", resourceCulture);
@@ -86,6 +126,26 @@ namespace Lab2_Sem3_Galin_Mihail.Properties {
         internal static System.Drawing.Bitmap icons8_выключение_системы_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-выключение-системы-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap next_icon_icons_com_74443 {
+            get {
+                object obj = ResourceManager.GetObject("next_icon-icons.com_74443", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_can_115312 {
+            get {
+                object obj = ResourceManager.GetObject("trash-can_115312", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

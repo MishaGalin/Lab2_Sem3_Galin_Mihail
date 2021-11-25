@@ -41,6 +41,11 @@ namespace Lab2_Sem3_Galin_Mihail
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.AddButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.UpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.DownToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.LeftToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.RightToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.DeleteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.Panel = new System.Windows.Forms.Panel();
             this.MenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
@@ -111,7 +116,12 @@ namespace Lab2_Sem3_Galin_Mihail
             this.ExitButtonWithImage,
             this.toolStripSeparator1,
             this.AddButton,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.UpToolStripButton,
+            this.DownToolStripButton,
+            this.LeftToolStripButton,
+            this.RightToolStripButton,
+            this.DeleteToolStripButton});
             this.ToolStrip.Location = new System.Drawing.Point(0, 24);
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.Size = new System.Drawing.Size(800, 54);
@@ -153,12 +163,69 @@ namespace Lab2_Sem3_Galin_Mihail
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.ClearFigures);
             // 
+            // UpToolStripButton
+            // 
+            this.UpToolStripButton.Enabled = false;
+            this.UpToolStripButton.Image = global::Lab2_Sem3_Galin_Mihail.Properties.Resources.arrow_up_157361;
+            this.UpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.UpToolStripButton.Name = "UpToolStripButton";
+            this.UpToolStripButton.Size = new System.Drawing.Size(43, 51);
+            this.UpToolStripButton.Text = "Вверх";
+            this.UpToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.UpToolStripButton.Click += new System.EventHandler(this.UpToolStripButton_Click);
+            // 
+            // DownToolStripButton
+            // 
+            this.DownToolStripButton.Enabled = false;
+            this.DownToolStripButton.Image = global::Lab2_Sem3_Galin_Mihail.Properties.Resources.arrow_down_15736;
+            this.DownToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DownToolStripButton.Name = "DownToolStripButton";
+            this.DownToolStripButton.Size = new System.Drawing.Size(37, 51);
+            this.DownToolStripButton.Text = "Вниз";
+            this.DownToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DownToolStripButton.Click += new System.EventHandler(this.DownToolStripButton_Click);
+            // 
+            // LeftToolStripButton
+            // 
+            this.LeftToolStripButton.Enabled = false;
+            this.LeftToolStripButton.Image = global::Lab2_Sem3_Galin_Mihail.Properties.Resources.back_icon_icons_com_74430;
+            this.LeftToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.LeftToolStripButton.Name = "LeftToolStripButton";
+            this.LeftToolStripButton.Size = new System.Drawing.Size(44, 51);
+            this.LeftToolStripButton.Text = "Влево";
+            this.LeftToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.LeftToolStripButton.Click += new System.EventHandler(this.LeftToolStripButton_Click);
+            // 
+            // RightToolStripButton
+            // 
+            this.RightToolStripButton.Enabled = false;
+            this.RightToolStripButton.Image = global::Lab2_Sem3_Galin_Mihail.Properties.Resources.next_icon_icons_com_74443;
+            this.RightToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RightToolStripButton.Name = "RightToolStripButton";
+            this.RightToolStripButton.Size = new System.Drawing.Size(51, 51);
+            this.RightToolStripButton.Text = "Вправо";
+            this.RightToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.RightToolStripButton.Click += new System.EventHandler(this.RightToolStripButton_Click);
+            // 
+            // DeleteToolStripButton
+            // 
+            this.DeleteToolStripButton.Enabled = false;
+            this.DeleteToolStripButton.Image = global::Lab2_Sem3_Galin_Mihail.Properties.Resources.trash_can_115312;
+            this.DeleteToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.DeleteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DeleteToolStripButton.Name = "DeleteToolStripButton";
+            this.DeleteToolStripButton.Size = new System.Drawing.Size(55, 51);
+            this.DeleteToolStripButton.Text = "Удалить";
+            this.DeleteToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DeleteToolStripButton.Click += new System.EventHandler(this.DeleteToolStripButton_Click);
+            // 
             // Panel
             // 
             this.Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Panel.Location = new System.Drawing.Point(77, 77);
+            this.Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Panel.Location = new System.Drawing.Point(0, 78);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(632, 326);
+            this.Panel.Size = new System.Drawing.Size(800, 350);
             this.Panel.TabIndex = 4;
             this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintPanel);
             this.Panel.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDoubleClick);
@@ -200,6 +267,11 @@ namespace Lab2_Sem3_Galin_Mihail
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem очиститьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton UpToolStripButton;
+        private System.Windows.Forms.ToolStripButton DownToolStripButton;
+        private System.Windows.Forms.ToolStripButton LeftToolStripButton;
+        private System.Windows.Forms.ToolStripButton RightToolStripButton;
+        private System.Windows.Forms.ToolStripButton DeleteToolStripButton;
     }
 }
 
