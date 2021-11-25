@@ -42,7 +42,7 @@ namespace Lab2_Sem3_Galin_Mihail
             this.LeftToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.RightToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.DeleteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Panel = new System.Windows.Forms.Panel();
+            this.Panel = new MyPanel();
             this.AddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -326,7 +326,7 @@ namespace Lab2_Sem3_Galin_Mihail
         private System.Windows.Forms.ToolStripMenuItem ExitButton;
         private System.Windows.Forms.ToolStrip ToolStrip;
         private System.Windows.Forms.ToolStripButton ExitButtonWithImage;
-        private System.Windows.Forms.Panel Panel;
+        private MyPanel Panel;
         private System.Windows.Forms.ToolStripButton AddButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
